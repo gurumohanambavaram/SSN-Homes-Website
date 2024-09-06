@@ -1,0 +1,266 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-content {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text */
+    padding: 10px;
+    z-index: 1001;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(10, 10, 10);
+    margin-left: 10px;
+    position: absolute; /* Position hamburger on the left */
+    left: 10px;
+    z-index: 1002;
+}
+
+/* SSN Homes Tag */
+.logo-tag {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 0 auto; /* Center the text */
+}
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden by default */
+    width: auto; /* Adjust to half screen width */
+    height: auto;
+    background-color:white;
+    padding: 40px;
+    box-shadow: 2px 0 5px rgba(10, 212, 60, 0);
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.dropdown-menu nav a {
+    margin-top: 100px;
+    display: block;
+    color:black;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+}
+
+.dropdown-menu nav a:hover {
+    background-color: #0ee8e8;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+/* Banner Section */
+/* Slideshow container */
+.slideshow-container {
+    margin-top:70px;
+    position: relative;
+    width: 100%;
+    height: auto; /* Fixed height for the banner */
+    overflow: hidden;
+}
+
+/* Each slide */
+.slides {
+    display: none; /* Hide all slides by default */
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container */
+}
+
+/* Ensuring the images are fully contained within the slides */
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    vertical-align: middle;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+/* Add spacing between banner and the next section */
+.banner {
+    margin-bottom: 50px; /* Adds space between banner and About Us section */
+}
+
+
+/* About Us Section */
+.about-us-section {
+    position: relative;
+    background: url('imgs/logo2.jpg') no-repeat center center; /* Background image centered */
+    background-size: contain; /* Make the background image a fixed size */
+    height: 400px; /* Set a fixed height for the section */
+    padding: 20px 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dull overlay effect */
+    z-index: 1;
+}
+
+.about-us-content {
+    position: relative;
+    z-index: 2; /* Make sure the text appears above the overlay */
+    max-width: 800px; /* Set a max width for the content */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Section Headings */
+#services h2, #Aminities h2, #Gallery h2, #videos h2,#Contactus h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 30px;
+    color: #333;
+}
+
+/* Service and Amenity Sections */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.service {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+
+    /* Center content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.service h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.service p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .service-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 20px 0;
+    }
+    
+
+    .service {
+        width: 100%;
+        margin: 0;
+    }
+    .nav-links {
+        display: none; /* Hide the links initially */
+        flex-direction: column;
+        width: 100%;
+    }
+    .header-content {
+        justify-content: center;
+    }
+    .hamburger-menu {
+        position: absolute;
+        left: 10px;
+    }
+    .logo-tag {
+        margin: 0 auto;
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .navbar {
+        display: none; /* Hide normal navbar on small screens */
+    }}
+/* Show Dropdown when active */
+        .show-dropdown {
+        left: 0; /* Move into view */
+        }
+
+@media screen and (max-width: 480px) {
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+
+    .service {
+        padding: 10px;
+    }
+    .brand-name {
+        font-size: 20px; /* Slightly smaller font on mobile devices */
+    }
+}
+
